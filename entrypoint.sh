@@ -4,10 +4,12 @@ REPO="$1"
 ENDPOINT="$2"
 KEY="$3"
 
+cd /app
+
 #clone and build
-rm -rf app
-git clone "$REPO" "app"
-cd app
+rm -rf repo
+git clone "$REPO" "repo"
+cd repo
 npm i
 npm run test
 npm run build
