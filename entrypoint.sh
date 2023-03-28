@@ -8,16 +8,18 @@ cd /app
 
 #clone and build
 rm -rf repo
-git clone "$REPO" "repo"
-cd repo
+rm -rf repo.zip
+wget "$1" -O repo.zip
+unzip repo.zip -d repo
+cd repo/*
 npm i
 npm run test
 npm run build
 
 # zip
 cd dist
-zip -r ../../deploy.zip *
+zip -r ../../../deploy.zip *
 
 # deploy
-cd ../../
+cd ../../../
 curl -H "X-API-Key: $KEY" "$ENDPOINT" -F file=@deploy.zip
