@@ -9,7 +9,8 @@ cd /app
 #clone and build
 rm -rf repo
 rm -rf repo.zip
-wget "$1" -O repo.zip
+echo "Try clone from $REPO"
+wget "$REPO" -O repo.zip
 unzip repo.zip -d repo
 cd repo/*
 npm i
