@@ -1,8 +1,5 @@
 name: 'Deploy'
 description: 'Build and deploy'
-inputs:
-outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
