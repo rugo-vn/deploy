@@ -1,5 +1,17 @@
 name: 'Deploy'
 description: 'Build and deploy'
+inputs:
+  REPO:
+    description: 'Repository to build'
+    required: true
+  ENDPOINT:
+    description: 'Endpoint to upload'
+    required: true
+  KEY:
+    description: 'Key for authorization'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.REPO }} ${{ inputs.ENDPOINT }} ${{ inputs.KEY }}

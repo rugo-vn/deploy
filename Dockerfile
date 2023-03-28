@@ -29,4 +29,5 @@ RUN npm --version
 
 WORKDIR /app
 
-ENTRYPOINT ["/entrypoint.sh"]
+COPY entrypoint.sh /app/entrypoint.sh
+ENTRYPOINT ["/app/entrypoint.sh"]
